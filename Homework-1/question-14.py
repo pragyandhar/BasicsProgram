@@ -7,7 +7,7 @@ T = int(input("Enter the Time required: "))
 
 # LOGIC AREA
 Amt = P*((1+(R/100))**(T))
-CI = P+Amt
+CI = P-Amt
 
 # DISPLAY AREA
 print("The Amount after", T, "Years will be", Amt)
