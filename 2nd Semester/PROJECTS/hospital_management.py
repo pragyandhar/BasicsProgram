@@ -47,10 +47,18 @@ class Medical_Records:
 # Driver Code
 patient1 = Patient(1, "Ravi", 23, "Male", "+91 7837764328")
 patient2 = Patient(2, "Saket", 27, "Male", "+91 9989674123")
-patient
+patient3 = Patient(3, "Rakesh", 54, "Male", "+91 9785413652")
 doctor1 = Doctor(1, "Rotalk", "Cardiologist")
 doctor2 = Doctor(2, "Atring", "Radiologist")
 
 record = Medical_Records()
 record.add_records(patient1, doctor1, "Heart Problem", "Aspirin")
 print(record.get_record())
+
+patient_name = input("Enter Patient Name: ")
+if patient_name == "Ravi":
+    for x, y in record.get_record().items():
+        print(record.get_medical_record()[x][y][y["PatientID"]])
+elif patient_name == "Saket":
+    for x, y in record.get_record().items():
+        print(record.get_medical_record()[x][y][y["PatientID"]])
