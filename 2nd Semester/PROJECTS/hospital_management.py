@@ -53,12 +53,10 @@ doctor2 = Doctor(2, "Atring", "Radiologist")
 
 record = Medical_Records()
 record.add_records(patient1, doctor1, "Heart Problem", "Aspirin")
+record.add_records(patient2, doctor2, "Fracture", "Plaster")
 print(record.get_record())
 
 patient_name = input("Enter Patient Name: ")
-if patient_name == "Ravi":
-    for x, y in record.get_record().items():
-        print(record.get_medical_record()[x][y][y["PatientID"]])
-elif patient_name == "Saket":
-    for x, y in record.get_record().items():
-        print(record.get_medical_record()[x][y][y["PatientID"]])
+for i in record.get_record():
+    if patient_name == record.get_record()[i]["Patient"]["Name"]:
+        print(f"{record.get_record()[i]["Patient"]}")
