@@ -31,6 +31,6 @@ lb.pack()
 button1 = tk.Button(root, text=" Increment ", command=add, fg="green")
 button1.pack(side=tk.LEFT, ipadx=10, ipady=10, padx=10, pady=10)
 button2 = tk.Button(root, text=" Decrement ", command=sub, fg='red')
-button2.pack(side=tk.CENTER, ipadx=10, ipady=10, padx=10, pady=10)
+button2.pack(side=tk.RIGHT, ipadx=10, ipady=10, padx=10, pady=10)
 
 root.mainloop()
