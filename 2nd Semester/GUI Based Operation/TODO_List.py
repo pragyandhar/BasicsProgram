@@ -1,4 +1,4 @@
-#You have to make a TO-DO List GUI Application where you need to add items to the list and delete items from the list. The application should have the following features: One Entry Box and an Add Item Button. When the user enters the item and clicks the Add Item button, the item should be added to the list. The application should also have a Delete Item Button and a Delete All Items Button. When the user selects an item from the list and clicks the Delete Item button, the selected item should be deleted from the list. When the user clicks the Delete All Items button, all the items should be deleted from the list. The application should also have a title "TO DO LIST" and should be of size 400x300 using class and object.
+#You have to make a TO-DO List GUI Application where you need to add items to the list and delete items from the list. The application should have the following features: One Entry Box and an Add Item Button. When the user enters the item and clicks the Add Item button, the item should be added to the list. The application should also have a Delete Item Button and a Delete All Items Button. When the user selects an item from the list and clicks the Delete Item button, the selected item should be deleted from the list. When the user clicks the Delete All Items button, all the items should be deleted from the list. There should also be an "Undo" option wherein if a user deletes the entry then, we can undo and get the result back. The application should also have a title "TO DO LIST" and should be of size 400x300 using class and object.
 
 import tkinter as tk
 class todo:
@@ -14,6 +14,9 @@ class todo:
     def deleteall(self):
         self.lstbx.delete(0, tk.END)
 
+    def undo(self):
+        self.lstbx.insert(tk.END, self.entry.get())
+        self.entry.delete(0, tk.END)
 
     def __init__(self, mainwindow) -> None:
         self.mainwindow = mainwindow
@@ -35,6 +38,9 @@ class todo:
 
         self.bt3 = tk.Button(mainwindow, text='Delete All Items', command=self.deleteall)
         self.bt3.grid(row=2, column=1)
+
+        self.bt4 = tk.Button(mainwindow, text='Undo', command=self.undo)
+        self.bt4.grid(row=2, column=2)
 
 root = tk.Tk()
 exe = todo(root)
