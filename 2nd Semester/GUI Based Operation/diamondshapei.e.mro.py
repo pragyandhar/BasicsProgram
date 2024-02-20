@@ -11,9 +11,9 @@ class B(X):
         print('Display from B')
         super().disp()
 class C(B,A):
-    def disp(self):
-        print('Display from C')
-
+    # def disp(self):
+    #     print('Display from C')
+    pass
 c_obj = C()
 c_obj.disp()
 print(C.__mro__)
