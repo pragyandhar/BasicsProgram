@@ -4,12 +4,15 @@ class X:
 class A(X):
     def disp(self):
         print('Display from A')
+        super().disp()
 
 class B(X):
-    pass
-
+    def disp(self):
+        print('Display from B')
+        super().disp()
 class C(B,A):
-    pass
+    def disp(self):
+        print('Display from C')
 
 c_obj = C()
 c_obj.disp()
