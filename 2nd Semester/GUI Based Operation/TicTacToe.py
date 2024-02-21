@@ -5,7 +5,7 @@ class TicTacToe(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Tic Tac Toe")
-        self.geometry("300x300")
+        self.geometry("400x400")
         self.current_player = "X"
         self.board = [[None, None, None],
                       [None, None, None],
@@ -18,8 +18,7 @@ class TicTacToe(tk.Tk):
                         [None, None, None]]
         for i in range(3):
             for j in range(3):
-                self.buttons[i][j] = tk.Button(self, text="", font=("Arial", 20),
-                                               width=3, height=1, command=lambda i=i, j=j: self.on_click(i, j))
+                self.buttons[i][j] = tk.Button(self, text="", font=("Arial", 25), fg = "white", bg='Red', activebackground='Cyan',activeforeground='Blue', width=6, height=2,command=lambda i=i, j=j: self.on_click(i, j))
                 self.buttons[i][j].grid(row=i, column=j)
 
     def on_click(self, i, j):
