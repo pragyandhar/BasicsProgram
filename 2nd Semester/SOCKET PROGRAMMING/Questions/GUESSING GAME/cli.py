@@ -18,4 +18,4 @@ while 1:
 
     res = s.recv(1024) # receive data from the server
     print("Server:", res.decode()) # print the data
-    s.close() # close the connection
+s.close() # close the connection
