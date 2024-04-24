@@ -12,10 +12,10 @@ import random
 s = st.socket(st.AF_INET, st.SOCK_STREAM) # create a socket object
 
 s.connect(('localhost', 1234)) # connect to the server
+while 1:
+    data = input('Choose a random number: ') # input a random number
+    s.send(data.encode()) # send the random number to the server
 
-data = input('Choose a random number: ') # input a random number
-s.send(data.encode()) # send the random number to the server
-
-res = s.recv(1024) # receive data from the server
-print('Server:', res.decode()) # print the data
-s.close() # close the connection
+    res = s.recv(1024) # receive data from the server
+    print("Server:", res.decode()) # print the data
+    s.close() # close the connection
