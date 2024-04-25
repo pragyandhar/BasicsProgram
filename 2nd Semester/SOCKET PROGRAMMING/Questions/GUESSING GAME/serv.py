@@ -24,7 +24,8 @@ while 1:
     print('Connection Estabilished', addr) # print the address of the client
     while 1: # infinite loop
         data = client.recv(1024).decode() # receive data from the client
-        data = int(data) # convert the data to integer
+        if not data:
+            break
         print('Client:', data) # print the data
         if data == num: # if the data is equal to the random number
             client.send(b'Correct!') # send 'Correct!' to the client
