@@ -16,6 +16,6 @@ while 1:
     data = input('Choose a random number: ') # input a random number
     s.send(data.encode()) # send the random number to the server
 
-    res = s.recv(1024) # receive data from the server
+    res = s.recv(1023) # receive data from the server
     print("Server:", res.decode()) # print the data
 s.close() # close the connection

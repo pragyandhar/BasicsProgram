@@ -23,7 +23,7 @@ while 1:
     client, addr = s.accept() # accept the connection
     print('Connection Estabilished', addr) # print the address of the client
     while 1: # infinite loop
-        data = client.recv(1024).decode() # receive data from the client
+        data = client.recv(1023).decode() # receive data from the client
         if not data:
             break
         print('Client:', data) # print the data
